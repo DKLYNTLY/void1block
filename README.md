@@ -8,9 +8,9 @@ Start with nothing but a single block beneath your feet — and everything else 
 
 ## What is this?
 
-Void One Block adds a brand-new **world type** to Minecraft. Instead of generating normal terrain, it strips everything away and leaves you standing on exactly one block, floating in the void. From there, it's your job to survive, expand, and explore — while structures, biomes, and mod content still work exactly as they should.
+Void One Block adds a brand-new **world type** to Minecraft. Instead of generating normal terrain, it strips everything away and leaves you standing on exactly one block, floating in the void. From there, it's your job to survive and expand — while biome identity still works exactly as it should, so modded biomes and biome-aware systems behave normally even though there's no terrain to look at.
 
-No mountains. No oceans. No forests. Just you, one block, and the rest of the world waiting to be found through exploration, structures, and progression.
+No mountains. No oceans. No forests. No structures to stumble into. Just you, one block, and whatever you build from there.
 
 ***
 
@@ -24,18 +24,14 @@ The Overworld spawns you on a single platform block above an endless void. The b
 
 Take the challenge further — the Nether and the End can be voided too:
 
-*   **Nether:** stripped of terrain, but fortresses, bastions, and modded Nether structures still generate normally.
-*   **The End:** islands are gone, but the exit fountain, obsidian pillars, and End Cities still spawn correctly — including a fully working dragon fight and podium sequence.
+*   **Nether:** stripped of terrain entirely — pure void.
+*   **The End:** islands are gone, but the exit fountain, obsidian spikes, and the full dragon fight and podium sequence are preserved and placed directly, so the End fight still works correctly.
 
 Both are optional and configurable independently.
 
-### 🧩 Full Mod & Biome Compatibility
+### 🧩 Biome-Compatible, Structure-Free
 
-This isn't a "delete everything" void generator. Original biome sources are preserved, meaning:
-
-*   Modded biomes (BYG, BOP, and similar) still assign their correct biome IDs to your world.
-*   Modded structures still use their normal generation pipeline.
-*   Only ordinary terrain and decoration (trees, ores, terrain blobs, islands) are removed — structures and biome identity stay intact.
+This void generator preserves original biome sources, so modded biomes (BYG, BOP, and similar) still assign their correct biome IDs to your world — useful for anything that keys off biome identity. Structures, however, are intentionally disabled across every void dimension: no strongholds, villages, fortresses, bastions, End Cities, or modded structures will generate. The one-block challenge is meant to be self-contained rather than a structure hunt.
 
 ### ⚙️ Configurable Spawn Block
 
@@ -44,10 +40,6 @@ Choose exactly what you start on. By default, Void One Block pairs with **Random
 ```
 spawnBlock = "random_item_generator_resurrected:item_block"
 ```
-
-### 🗝️ Structures, Preserved
-
-`generateStructures` is on by default, so strongholds, End Cities, fortresses, bastions, villages, and modded structures all remain part of the experience — you just won't find them buried in useless terrain.
 
 ### 🎁 Bonus Chest Support
 
@@ -67,10 +59,11 @@ World generation settings are marked stable, so you won't get the "This world us
 
 | Option             |Default                                      |Description                                                                                                                        |
 | ------------------ |-------------------------------------------- |---------------------------------------------------------------------------------------------------------------------------------- |
-| <code>generateStructures</code> |<code>true</code>                            |Enables/disables structure generation across all void dimensions.                                                                  |
 | <code>spawnBlock</code> |<code>random_item_generator_resurrected:item_block</code> |The block placed beneath the player at Overworld spawn. Falls back to <code>minecraft:bedrock</code> if the configured block/mod isn't present. |
-| <code>voidNether</code> |<code>true</code>                            |Voids Nether terrain while preserving structures and biomes.                                                                       |
-| <code>voidEnd</code> |<code>true</code>                            |Voids End terrain while preserving the fountain, pillars, End Cities, and dragon fight.                                            |
+| <code>voidNether</code> |<code>true</code>                            |Voids Nether terrain entirely.                                                                       |
+| <code>voidEnd</code> |<code>true</code>                            |Voids End terrain while preserving the fountain, obsidian spikes, and dragon fight.                                            |
+
+> Structure generation is always disabled in every void dimension — this is no longer a configurable option.
 
 ***
 
